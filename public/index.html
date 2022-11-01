@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css file fontawsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <!-- css file AOS library -->
+    <link rel="stylesheet" href="../src/css/aos.css">
+    <!-- css file ihover library -->
+    <link rel="stylesheet" href="../src/css/ihover.min.css">
+
+    <!-- css file swiper library -->
+    <link rel="stylesheet" href="../src/css/swiper-bundle.min.css">
+    
+
+
+    <link rel="stylesheet" href="build/tailwind.css">
+    <link rel="stylesheet" href="../src/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!----------- navbar & Header start -------------->
+    <div class="header-container w-full flex flex-col" id="home">
+
+        <div class="navbar-container w-full  relative">
+            <div class="navbar  w-full p-2 md:p-6 grid grid-cols-12 absolute top-0 right-0 left-0 bg-transparent z-10">
+
+                <div class="logo  flex lg:flex-1 justify-start md:justify-center items-center col-span-6  md:col-span-3">
+                    <i class="fas fa-hiking text-2xl text-[#219150] dark:text-[#17b1b9]"></i>
+                    <p class="px-3 text-xl font-bold">Travel</p>
+                </div>
+
+                <div class="nav-container  flex lg:flex-1 justify-end md:justify-around items-center col-span-6 md:col-span-9" >
+                    <div class="nav-item  md:flex lg:flex-[2] justify-center">
+                        <i  class="fas fa-times nav-close hidden"></i>
+                        <a class="px-3 hover:font-semibold duration-100" onclick="closeMenu()" href="#home">Home</a>
+                        <a class="px-3 hover:font-semibold duration-100" onclick="closeMenu()" href="#outdoor">About</a>
+                        <a class="px-3 hover:font-semibold duration-100" onclick="closeMenu()" href="#shop">Shop</a>
+                        <a class="px-3 hover:font-semibold duration-100" onclick="closeMenu()" href="#packages">Packages</a>
+                        <a class="px-3 hover:font-semibold duration-100" onclick="closeMenu()" href="#reviews">Reviews</a>
+                        <a class="px-3 hover:font-semibold duration-100" onclick="closeMenu()" href="#blogs">Blogs</a>                        
+                    </div>
+
+                    
+
+                    <div class="icons text-2xl relative flex justify-center md:flex-1 ">
+                        <div class="theme flex justify-center items-center z-30 relative lg:mr-3 cursor-pointer">
+                            <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-7 md:h-7 sun icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                            </svg>
+                            <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-7 md:h-7 moon icon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                            </svg>
+                            <svg  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 md:w-7 md:h-7 system">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                            </svg>
+
+                           <div class="container-dark-mood fixed w-screen h-screen inset-0 hidden dark:text-[#0e6dad]">
+                            <div class="dark-mood absolute right-10 lg:right-[8.5rem] 2xl:right-[15rem] top-14  rounded-md overflow-hidden bg-stone-100 dark:text-[#0e6dad] border z-30">
+                              <div data-theme="light" class="border-b-2 text-base py-1 px-4 cursor-pointer flex items-center justify-between theme-swicher duration-200 hover:dark:bg-slate-200  hover:text-[#219150] dark:text-[#0e6dad]">
+                                <svg data-theme="light"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" w-[18px] h-[18px] close-theme">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386l-1.591 1.591M21 12h-2.25m-.386 6.364l-1.591-1.591M12 18.75V21m-4.773-4.227l-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0z" />
+                                </svg>
+                                <span data-theme="light" class="ml-2 close-theme" >Light</span>
+                              </div>
+                              <div data-theme="dark" class="border-b-2 text-base py-1 px-4 cursor-pointer flex items-center justify-between theme-swicher duration-200 hover:dark:bg-slate-200  hover:text-[#219150] dark:text-[#0e6dad]">
+                                <svg data-theme="dark" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[18px] h-[18px] close-theme">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z" />
+                                </svg> 
+                                <span data-theme="dark" class="ml-2 close-theme" >Dark</span>
+                              </div>
+                              <div data-theme="system" class="border-b-2 text-base py-1 px-4 cursor-pointer flex items-center justify-between theme-swicher duration-200 hover:dark:bg-slate-200  hover:text-[#219150] dark:text-[#0e6dad]">
+                                <svg data-theme="system"  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-[18px] h-[18px] close-theme">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0115 18.257V17.25m6-12V15a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 15V5.25m18 0A2.25 2.25 0 0018.75 3H5.25A2.25 2.25 0 003 5.25m18 0V12a2.25 2.25 0 01-2.25 2.25H5.25A2.25 2.25 0 013 12V5.25" />
+                                </svg>
+                                <span data-theme="system" class="ml-2 close-theme" >System</span>
+                                
+                              </div>
+                            </div>
+                        </div>
+
+                        </div>
+                    
+                      
+
+                        <i class="fa-solid fa-cart-shopping px-[6px] cursor-pointer transition-all duration-300 hover:text-[#219150] dark:hover:text-[#17b1b9] text-xl md:text-2xl"></i>
+                    
+                        <i class="fa-solid fa-magnifying-glass search-icon px-[6px] cursor-pointer transition-all duration-300 hover:text-[#219150] dark:hover:text-[#17b1b9] text-xl md:text-2xl" ></i>
+                       
+                        <i class="fa-solid fa-bars menu-bar md:hidden cursor-pointer md:px-3 text-xl md:text-2xl hover:text-[#219150] dark:hover:text-[#17b1b9]"></i>
+
+
+                    </div>
+
+                        <!-- <div class="theme flex justify-center items-center z-30"> -->
+                            
+                        <div class="search-box fixed inset-0 bg-[rgba(0,0,0,.85)] h-screen w-screen hidden ">
+                             <i class="fas fa-times search-close  absolute top-14 right-14 cursor-pointer text-white "></i>
+                             <input type="text" placeholder="Search..." autocomplete="0ff" class="w-[80%] md:w-96 border-0 outline-0 border-b-2 text-[#c5c6c7] border-[#c5c6c7] h-14 bg-transparent">
+                        </div>
+                    <!-- </div> -->
+                </div>
+            
+            </div>
+
+        </div>
+
+
+            
+    
+
+            <div class="header-slider">
+                       
+                <div class="swiper slider-header" >
+
+
+                     
+                        <div class="swiper-wrapper relative text-center w-full" >
+                    
+                        <div class="swiper-slide relative">
+                            <img class="img-hed dark:hidden" src="../src/images/bg/home-bg-1.jpg" alt="bg-header-1">
+                            <img class="img-hed dark-img-rotate hidden dark:block" src="../src/images/dark/dark6.jpg" alt="bg-dark-3">
+                            
+                            <div class="info flex flex-col justify-center items-center max-w-screen-2xl">
+                                <span class="title text-2xl md:text-3xl capitalize 2xl:text-4xl">never stop</span>
+                                <h1 class="subtitle text-3xl md:text-4xl tracking-wide py-4 uppercase font-semibold 2xl:text-6xl text-[#219150] dark:text-white">Exploring</h1>
+                                <p class="text w-5/6 sm:w-96 text-xs md:text-base md:w-[500px] md:leading-8  2xl:w-3/4 text-center 2xl:py-5  2xl:text-xl text-[#10221b] dark:text-white dark:bg-[#0000001a] dark:rounded-md">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit unde ex molestias soluta consequatur saepe aliquam, excepturi delectus consequuntur minus!</p>
+                                <a href="#" class="btn mt-4 bg-transparent px-5 md:px-7 py-2 2xl:text-2xl 2xl:mt-3 border-2 transition-all duration-300 border-green-900  hover:bg-[#10221b] hover:border-[#10221b] hover:text-white dark:border-white dark:hover:bg-white capitalize dark:text-white dark:hover:text-black font-semibold" >get started</a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="img-hed dark:hidden" src="../src/images/bg/home-bg-2.jpg" alt="bg-header-2">
+                            <img class="img-hed hidden dark:block" src="../src/images/dark/dark8.jpg" alt="bg-dark-1">
+                            
+
+                            <div class="info-2 flex flex-col justify-center items-center">
+                                <span class="title text-2xl md:text-3xl capitalize  2xl:text-4xl">make tour</span>
+                                <h1 class="subtitle text-3xl md:text-4xl tracking-wide py-4 uppercase font-semibold  2xl:text-6xl text-[#219150] dark:text-[#093652]">amazing</h1>
+                                <p class="text w-5/6 sm:w-96 md:w-[500px] text-xs md:text-base md:leading-8 2xl:w-3/4 text-center  2xl:py-5 text-[#10221b]  2xl:text-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit unde ex molestias soluta consequatur saepe aliquam, excepturi delectus consequuntur minus!</p>
+                                <a href="#" class="btn relative mt-4 bg-transparent px-5 md:px-7 py-2  2xl:text-2xl 2xl:mt-3 border-2 transition-all duration-300 border-green-900 capitalize hover:bg-[#10221b] hover:border-[#10221b] hover:text-white dark:border-[#093652] dark:hover:bg-[#093652]  dark:hover:text-[#c5c6c7]" >
+                                Get Started
+                                </a>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <img class="img-hed dark:hidden" src="../src/images/bg/home-bg-3.jpg" alt="bg-header-3">
+                            <img  class="img-hed hidden dark:block" src="../src/images/dark/dark2.jpg" alt="bg-dark-2dark2.jpg">
+                            
+
+                            <div class="info flex flex-col justify-center items-center">
+                                <span class="title text-2xl md:text-3xl capitalize 2xl:text-4xl">explore the</span>
+                                <h1 class="subtitle text-3xl md:text-4xl tracking-wide py-4 uppercase font-semibold 2xl:text-6xl text-[#219150] dark:text-[#31dce6]">new world</h1>
+                                <p class="text w-5/6 sm:w-96 md:w-[500px] text-xs md:text-base md:leading-8 2xl:w-3/4 text-center 2xl:py-5  2xl:text-xl text-[#10221b] dark:text-[#c5c6c7]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit unde ex molestias soluta consequatur saepe aliquam, excepturi delectus consequuntur minus!</p>
+                                <a href="#" class="btn mt-4 bg-transparent px-5 md:px-7 py-2 2xl:text-2xl 2xl:mt-3 border-2 transition-all duration-300 border-green-900  hover:bg-[#10221b] hover:border-[#10221b] hover:text-white dark:border-[#31dce6] dark:hover:bg-[#31dce6] capitalize  dark:text-white hover:font-semibold dark:hover:text-[#212121]" >get started</a>
+                            </div>
+                        </div>
+                    
+                    </div>
+                
+                    
+
+                
+                </div>
+            </div>
+
+        </div>
+       
+    
+    <!----------- navbar & Header End ---------------->
+
+    <h1 class="text-2xl text-center w-full py-8 px-4 dark:text-[#c5c6c7] dark:bg-[#212121]" id="typewriter"></h1>
+
+    <!----------- Adventure Idea! start -------------->
+    
+    <div class="adventure-container w-full py-10 flex flex-wrap justify-center items-center overflow-x-hidden dark:bg-[#212121]">
+        <h1 class="text-3xl w-full  text-center py-10 font-bold dark:text-[#17b1b9]">Adventure Idea!</h1>
+    </div>
+    <!----------- Adventure Idea! End ---------------->
+
+
+    <!---------- Memorable Outdoor Experiences---START ---->
+        <div class="outdoor-container  w-full flex justify-center  bg-[#eeeeee] dark:bg-[#323232]" id="outdoor">
+           <div class="w-full grid grid-cols-12 max-w-[1500px]">
+
+               <div class="img w-full col-span-12 md:col-span-6 xl:p-16">
+                       <div class="image relative w-full h-full">
+                           <div class="w-full relative position ">
+                              <img  class="z-30 w-full object-contain" src="../src/images/about-img.jpg" alt="outdoor-image">
+                           </div>
+                       </div>
+               </div>
+           
+               <div class="text w-full col-span-12 md:col-span-6 p-5  xl:flex xl:flex-col xl:justify-center xl:items-center">
+                   <h1 class="sm:text-2xl lg:text-3xl 2xl:text-5xl xl:self-start dark:text-[#03e9f4] font-semibold">Memorable Outdoor Experiences</h1>
+                   <div class="text">
+                       <p class="py-5  text-xs md:text-base 2xl:text-xl  dark:text-[#c5c6c7]">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque voluptates corrupti natus necessitatibus beatae voluptatibus, deserunt quo soluta minima libero laborum, corporis error esse vitae placeat blanditiis reiciendis vel? Minima.</p>
+                       <p class="py-2  text-xs md:text-base mb-5 2xl:text-xl dark:text-[#c5c6c7]">Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident dicta doloremque placeat porro, ipsam quia at beatae atque odit iste?</p>
+                   </div>
+                   <a href="javascript:void(0)" class=" border-[#0f3f23]  2xl:text-xl py-2 px-7 my-4 transition-all duration-300  xl:self-start dark:text-[#03e9f4] border-2 dark:border-[#03e9f4] hover:bg-[#0f4124] hover:text-white dark:box-shadow-btn dark:hover:bg-[#03e9f4] dark:hover:text-[#1f2833] dark:hover:rounded-lg dark:hover:shadow-box-shadow-custom dark:hover:font-semibold">Read More</a>
+               </div>
+           </div>
+                
+            </div>
+    <!---------- Memorable Outdoor Experiences---END ------>
+
+
+
+    <!-------------- Featured Products--------START-------->
+    <div class="swiper-products-container w-full flex flex-col justify-center items-center p-4 md:p-14 dark:bg-[#212121]" id="shop">
+        <div class="w-full  max-w-[1500px]">
+             <h2 class="font-bold  text-xl lg:text-3xl 2xl:text-5xl text-center w-full py-10 dark:text-[#17b1b9]">Featured Products</h2>
+            <div class="swiper slider-products py-8">
+
+                   <div class="swiper-wrapper products">
+                    
+
+                   </div>
+                 
+                 
+                   <div class="swiper-button-prev"></div>
+                   <div class="swiper-button-next"></div>
+                
+            </div>
+        </div>
+    </div>
+    <!-------------- Featured Products--------END---------->
+    
+
+    <!-- --------------Popular Packages-------START----- -->
+    <div class="popular-packages w-full  bg-[#eeeeee] dark:bg-[#323232] flex justify-center">
+        <div id="packages" class="popular-packages-container w-full  pb-20 pt-10 px-4 md:px-14 max-w-[1500px]  justify-center grid gap-7 items-center grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+                <h1 class="w-full bg-[#eeeeee] dark:bg-[#323232] mb-5 col-span-full text-xl max-w-[1500px] lg:text-3xl 2xl:text-5xl font-bold text-center dark:text-[#17b1b9]">Popular Packages</h1> 
+                    
+        </div>
+    </div>
+    <!-- --------------Popular Packages-------END------- -->
+
+
+    <!-- ------Client's Reviews------START-------------- -->
+    <div class="flex justify-center w-full  dark:bg-[#212121]">
+         <div id="reviews" class="clients-reviews-container w-full dark:bg-[#212121] px-4 md:px-14 py-20 max-w-[1500px] flex justify-center mx-auto">
+            
+            <div class="swiper review-slider w-full">
+                
+                <div class="swiper-wrapper client-comment">
+                 
+                               
+              </div>
+         </div>
+
+       </div>
+   </div>
+       <!-- ------Client's Reviews------END---------------- -->
+
+     <!------------- What We Offer------START ------------>
+
+
+         <div class="offer-containers bg-[#eeeeee] dark:bg-[#323232] w-full pb-20 pt-10 px-4 md:px-14">
+             <div class="offers grid gap-7 grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+                <h1 class=" text-xl lg:text-3xl 2xl:text-5xl col-span-full font-bold text-center py-5 dark:text-[#17b1b9]">What We Offer</h1> 
+                
+            </div>
+
+         </div>
+  
+     <!------------- What We Offer------END -------------->
+
+
+     
+     <!-------------- Our Daily Posts-------START------- -->
+     <div class="flex justify-center w-full  dark:bg-[#212121]">
+
+     <div class="flex justify-center max-w-[1500px] w-full mx-auto dark:bg-[#212121]">
+        <div class="daily-post-container w-full grid gap-8 grid-cols-1 xs:grid-cols-2 xl:grid-cols-3 pb-20 pt-10 px-4 md:px-[70px] dark:bg-[#212121]">
+            <h1 id="blogs" class="w-full mb-5 col-span-full text-center font-bold text-xl lg:text-3xl 2xl:text-5xl daily-h1 py-5 dark:text-[#17b1b9]">Our Daily Posts</h1>
+        
+
+        </div>
+    </div>
+</div>
+       
+    <!-------------- Our Daily Posts-------END--------- -->
+
+     <!-------------- Subscirbe Now ----START----------- -->
+     <div class="subscribe-container w-full  flex flex-col justify-center items-center py-20 px-4 xs:px-7 md:px-[60px] bg-[#eeeeee] dark:bg-[#323232]">
+        <h1 class="text-xl lg:text-3xl 2xl:text-5xl w-full py-5 text-center font-bold dark:text-[#17b1b9]">Subscirbe Now</h1>
+        <p class="leading-[2] w-full  md:max-w-xl py-4 px-4  text-justify dark:text-[#c5c6c7]">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ut sed qui, minus velit, delectus accusantium officia consectetur quos, sit tenetur deleniti ducimus ipsum nemo molestiae excepturi rem quam quibusdam harum.</p>
+        <form action="javascript:void(0)"  class="w-full  md:w-[576px] flex bg-white p-1  rounded-3xl ">
+            <input type="email" class="w-full outline-none border-0 rounded-xl" placeholder="Please Inter Your Email...">
+            <button class="subscribe-btn rounded-3xl transition-all duration-300 border-2 cursor-pointer hover:border-[#1c3520]   text-white bg-[#1c3520]   dark:text-[#c5c6c7] dark:bg-[#093652] py-2 px-3 md:px-5 text-xl md:text-2xl">Subscribe</button>
+        </form>
+     </div>
+     <!-------------- Subscirbe Now ----END------------- -->
+
+     <!-- --------------LOGO ------START--------------- -->
+     <div class="logo-container w-full py-20 px-[60px] dark:bg-[#212121]">
+        <div class="swiper swiper-logo">
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper text-center">
+              <!-- Slides -->
+              <div class="swiper-slide logo flex justify-center items-center">
+                <img class="img-logo" src="../src/images/client logo/client-logo-1.png" alt="">
+              </div>
+              <div class="swiper-slide logo flex justify-center items-center">
+                <img class="img-logo" src="../src/images/client logo/client-logo-2.png" alt="">
+              </div>
+              <div class="swiper-slide logo flex justify-center items-center">
+                <img class="img-logo"  src="../src/images/client logo/client-logo-3.png" alt="">
+              </div>
+              <div class="swiper-slide logo flex justify-center items-center">
+                <img class="img-logo" src="../src/images/client logo/client-logo-4.png" alt="">
+              </div>
+              
+            </div>
+        </div>
+     </div>
+     <!-- --------------LOGO ------END----------------- -->
+ 
+     <!-- ----------Footer -------START---------------- -->
+     <footer class="text-white relative w-full h-full">
+
+   
+    <div class="particle relative w-full h-full inset-0"  id="particles-js">  
+         <div class="footer-container absolute inset-0 w-full h-full pt-20  px-4 xs:px-7 md:px-[60px] grid justify-center  grid-cols-1 xxs:grid-cols-2 lg:grid-cols-4">
+         <div class="quick-links flex flex-col gap-5 items-center xs:items-start ">
+            <div class="title text-2xl font-semibold text-[#219150] dark:text-[#17b1b9] ">Quick Links</div>
+            <a href="#home" class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">Home</a>
+            <a href="#outdoor" class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">About</a>
+            <a href="#shop" class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">Shop</a>
+            <a href="#packages" class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">Packeges</a>
+            <a href="#reviews" class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">Reviews</a>
+            <a href="#blogs" class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">Blogs</a>
+         </div>
+         <div class="Extra-Links flex flex-col gap-5 items-center xs:items-start ">
+            <div class="title text-2xl font-semibold text-[#219150] dark:text-[#17b1b9]">Extra Links</div>
+            <div class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">My Acount</div>
+            <div class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">My Order</div>
+            <div class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">My Wishlist</div>
+            <div class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">Ask Questions</div>
+            <div class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">Terms Of Use</div>
+            <div class="link cursor-pointer transition-all duration-500 inline hover:text-[#219150] dark:hover:text-[#03e9f4]">Privacy Policy</div>
+         </div>
+
+         <div class="Contact-Info flex flex-col gap-5 items-center  xs:items-start ">
+            <div class="title text-2xl font-semibold text-[#219150] dark:text-[#17b1b9]">Contact Info</div>
+            <div class="link cursor-pointer transition-all duration-500 flex items-center hover:text-[#219150]">
+                <i class="fas fa-phone text-[#219150] dark:text-[#03e9f4] mr-2"></i>
+                <span class=" hover:text-[#219150] dark:hover:text-[#03e9f4] hover-translate">(+98)9376075686</span>
+            </div>
+            <div class="link cursor-pointer transition-all duration-500 flex items-center hover:text-[#219150]">
+                <i class="dark:text-[#03e9f4] fas fa-envelope text-[#219150] mr-2"></i>
+                <span class=" hover:text-[#219150] dark:hover:text-[#03e9f4] hover-translate">aminshahin.web@gmail.com</span>
+            </div>
+            <div class="link cursor-pointer transition-all duration-500 flex items-center hover:text-[#219150]">
+                <i class="dark:text-[#03e9f4] fas fa-map text-[#219150] mr-2"></i>
+                <span class=" hover:text-[#219150] dark:hover:text-[#03e9f4] hover-translate">Iran</span>
+            </div>
+        </div>
+
+        <div class="fallow-us flex flex-col gap-5 items-center  xs:items-start">
+            <div class="title text-2xl font-semibold text-[#219150] dark:text-[#17b1b9]">Fallow Us</div>
+            <div class="link cursor-pointer transition-all duration-500 flex items-center hover:text-[#219150]">
+                <i class="dark:text-[#03e9f4] fab fa-facebook-f text-[#219150] mr-2"></i>
+                <span class=" hover:text-[#219150] dark:hover:text-[#03e9f4] hover-translate">Facebook</span>
+            </div>
+            <div class="link cursor-pointer transition-all duration-500 flex items-center hover:text-[#219150]">
+                <i class="dark:text-[#03e9f4] fab fa-twitter text-[#219150] mr-2"></i>
+                <span class=" hover:text-[#219150] dark:hover:text-[#03e9f4] hover-translate">Twitter</span>
+            </div>
+            <div class="link cursor-pointer transition-all duration-500 flex items-center hover:text-[#219150]">
+                <i class="dark:text-[#03e9f4] fab fa-instagram text-[#219150] mr-2"></i>
+                <span class=" hover:text-[#219150] dark:hover:text-[#03e9f4] hover-translate">Instagram</span>
+            </div>
+            <div class="link cursor-pointer transition-all duration-500 flex items-center hover:text-[#219150]">
+                <i class="dark:text-[#03e9f4] fab fa-linkedin text-[#219150] mr-2"></i>
+                <span class=" hover:text-[#219150] dark:hover:text-[#03e9f4] hover-translate">Linkedin</span>
+            </div>       
+            <div class="link cursor-pointer transition-all duration-500 flex items-center hover:text-[#219150]">
+                <i class="dark:text-[#03e9f4] fab fa-github text-[#219150] mr-2"></i>
+                <div class=" hover:text-[#219150] dark:hover:text-[#03e9f4]  hover-translate flex justify-center items-center">Github</div>
+            </div>
+        </div>
+
+        <h1 class="w-full text-center text-xs mt-5 md:text-lg font-medium  col-span-full">
+        Created By <span class="text-[#219150] dark:text-[#03e9f4]">Amin Shahin</span> | All Rights Reserved!
+        </h1>
+    </div>
+    
+    </div>
+</footer>
+     <!-- ----------Footer -------END------------------ -->
+
+
+    <!-- js AOS library  -->
+    <script src="../src/js/aos.js"></script>
+    <!-- js Particle library  -->
+    <script src="../src/js/particles.min.js"></script>
+    <script src="../src/js/app.js"></script>
+
+    <!-- js Type Writer  library  -->
+    <script src="../src/js/typeWriter.js"></script>
+
+    <!-- js swiper library  -->
+    <script src="../src/js/swiper-bundle.min.js"></script>
+
+    <script src="../src/js/data.js"></script>
+    <script defer src="../src/js/javascript.js"></script>
+
+    
+</body>
+</html>
+
+
